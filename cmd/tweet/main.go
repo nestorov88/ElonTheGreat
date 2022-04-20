@@ -28,13 +28,8 @@ func main() {
 	initSeed := os.Getenv("INIT_SEED")
 
 	if len(initSeed) > 0 {
-
 		//Opening path to json file to import
-		_, err = service.ImportJson(os.Getenv("TWEET_FILE"))
-
-		if err != nil {
-			fmt.Printf("Importer occured error %s \n", err.Error())
-		}
+		go service.ImportJson(os.Getenv("TWEET_FILE"))
 	}
 
 	handler := h.New(service)
