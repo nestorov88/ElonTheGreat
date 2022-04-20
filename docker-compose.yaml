@@ -13,7 +13,7 @@ services:
     environment:
       MONGO_URI: "mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000"
       TWEET_FILE: "elonmusk.json"
-#      INIT_SEED: 1
+      INIT_SEED: 1
       PORT: "9000"
     network_mode: "host"
     depends_on:
